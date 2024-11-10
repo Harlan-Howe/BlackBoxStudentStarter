@@ -9,8 +9,8 @@ import java.util.HashMap;
 public class SoundPlayer implements LineListener
 {
     private boolean isPlaybackCompleted;
-    private HashMap<String, Clip> clipDictionary;
-    private HashMap<String, AudioInputStream> streamDictionary;
+    private final HashMap<String, Clip> clipDictionary;
+    private final HashMap<String, AudioInputStream> streamDictionary;
 
     public SoundPlayer()
     {
@@ -35,12 +35,9 @@ public class SoundPlayer implements LineListener
         catch (IOException ioExp)
         {
             System.out.println("Error loading sound file: "+soundFilename);
-        } catch (UnsupportedAudioFileException uafExp)
+        } catch (UnsupportedAudioFileException | LineUnavailableException exception)
         {
-            throw new RuntimeException(uafExp);
-        } catch (LineUnavailableException luExp)
-        {
-            throw new RuntimeException(luExp);
+            throw new RuntimeException(exception);
         }
     }
 

@@ -88,7 +88,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
 
         g.setColor(Color.BLACK);
         g.setFont(scoreFont);
-        g.drawString("Number of Shots Taken: "+ numShots, LEFT_MARGIN, TOP_MARGIN-20);
+        g.drawString(STR."Number of Shots Taken: \{numShots}", LEFT_MARGIN, TOP_MARGIN-20);
 
         if (revealedMode)
         {

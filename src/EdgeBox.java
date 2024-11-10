@@ -69,10 +69,8 @@ public class EdgeBox extends BlackBoxCell
 
     public void setMyLabel(String s)
     {
-        if (s.length()==0)
+        if (s.isEmpty())
             myLabel = "?";
-        else if (s.length()==1)
-            myLabel = s.toUpperCase();
         else
             myLabel = s.substring(0,1).toUpperCase();
     }
